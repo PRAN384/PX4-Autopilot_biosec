@@ -337,6 +337,7 @@ int GZBridge::task_spawn(int argc, char *argv[])
 				// wait for first clock message
 				system_usleep(1000);
 				sleep_count_limit--;
+				std::cout<<sleep_count_limit;
 			}
 
 			if (instance->world_time_us() == 0) {
