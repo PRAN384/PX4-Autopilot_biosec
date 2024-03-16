@@ -8,8 +8,8 @@
 . ${R}etc/init.d/rc.mc_defaults
 
 PX4_SIMULATOR=${PX4_SIMULATOR:=gz} 
-PX4_SIM_MODEL=${PX4_SIM_MODEL:=x500_depth_grass_world} ## If creating a new model of the Drone, this is where it goes, eg, new models with sensors
-PX4_GZ_WORLD=${PX4_GZ_WORLD:=grass_world} ## This is where you add the new world .sdf file 
+PX4_SIM_MODEL=${PX4_SIM_MODEL:=x500_depth} ## If creating a new model of the Drone, this is where it goes, eg, new models with sensors
+PX4_GZ_WORLD=${PX4_GZ_WORLD:=default} ## This is where you add the new world .sdf file 
 
 param set-default SIM_GZ_EN 1
 

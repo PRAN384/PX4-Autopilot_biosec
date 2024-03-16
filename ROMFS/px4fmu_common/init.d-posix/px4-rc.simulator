@@ -113,7 +113,7 @@ elif [ "$PX4_SIMULATOR" = "gz" ] || [ "$(param show -q SIM_GZ_EN)" = "1" ]; then
 		fi
 
 		# start gz bridge with pose arg.
-		sleep 15
+		# sleep 1
 		if ! gz_bridge start -p "${model_pose}" -m "${PX4_SIM_MODEL#*gz_}" -w "${PX4_GZ_WORLD}" -i "${px4_instance}"; then
 			echo "ERROR [init] gz_bridge failed to start and spawn model"
 			exit 1
