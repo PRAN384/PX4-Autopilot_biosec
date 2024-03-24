@@ -6,5 +6,5 @@
 #
 
 PX4_SIM_MODEL=${PX4_SIM_MODEL:=x500_depth}
-
+PX4_GZ_WORLD=${PX4_GZ_WORLD:=grass_world} ## This is where you add the new world .sdf file 
 . ${R}etc/init.d-posix/airframes/4001_gz_x500

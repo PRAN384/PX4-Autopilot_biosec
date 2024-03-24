@@ -1,0 +1,2559 @@
+<sdf version="1.9">
+  <world name="grass_world">
+    <scene>
+      <sky>
+        <clouds>
+          <speed>0.6</speed>
+        </clouds>
+        <background>0.0 0.5 1.0 1.0</background> <!-- RGBA values for blue sky -->
+      </sky>
+    </scene>
+    <physics type="ode">
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+    </physics>
+    <plugin name="gz::sim::systems::Physics" filename="gz-sim-physics-system" />
+    <plugin name="gz::sim::systems::UserCommands" filename="gz-sim-user-commands-system" />
+    <plugin name="gz::sim::systems::SceneBroadcaster" filename="gz-sim-scene-broadcaster-system" />
+    <plugin name="gz::sim::systems::Contact" filename="gz-sim-contact-system" />
+    <plugin name="gz::sim::systems::Imu" filename="gz-sim-imu-system" />
+    <plugin name="gz::sim::systems::AirPressure" filename="gz-sim-air-pressure-system" />
+    <plugin name="gz::sim::systems::ApplyLinkWrench" filename="gz-sim-apply-link-wrench-system" />
+    <plugin name="gz::sim::systems::Sensors" filename="gz-sim-sensors-system">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <gui fullscreen="false">
+      <plugin name="3D View" filename="GzScene3D">
+        <gz-gui>
+          <title>3D View</title>
+          <property type="bool" key="showTitleBar">0</property>
+          <property type="string" key="state">docked</property>
+        </gz-gui>
+        <engine>ogre2</engine>
+        <scene>scene</scene>
+        <ambient_light>0.5984631152222222 0.5984631152222222 0.5984631152222222</ambient_light>
+        <background_color>0.8984631152222222 0.8984631152222222 0.8984631152222222</background_color>
+        <camera_pose>-6 0 6 0 0.5 0</camera_pose>
+      </plugin>
+      <plugin name="World control" filename="WorldControl">
+        <gz-gui>
+          <title>World control</title>
+          <property type="bool" key="showTitleBar">0</property>
+          <property type="bool" key="resizable">0</property>
+          <property type="double" key="height">72</property>
+          <property type="double" key="width">121</property>
+          <property type="double" key="z">1</property>
+          <property type="string" key="state">floating</property>
+          <anchors target="3D View">
+            <line own="left" target="left" />
+            <line own="bottom" target="bottom" />
+          </anchors>
+        </gz-gui>
+        <play_pause>1</play_pause>
+        <step>1</step>
+        <start_paused>1</start_paused>
+      </plugin>
+      <plugin name="World stats" filename="WorldStats">
+        <gz-gui>
+          <title>World stats</title>
+          <property type="bool" key="showTitleBar">0</property>
+          <property type="bool" key="resizable">0</property>
+          <property type="double" key="height">110</property>
+          <property type="double" key="width">290</property>
+          <property type="double" key="z">1</property>
+          <property type="string" key="state">floating</property>
+          <anchors target="3D View">
+            <line own="right" target="right" />
+            <line own="bottom" target="bottom" />
+          </anchors>
+        </gz-gui>
+        <sim_time>1</sim_time>
+        <real_time>1</real_time>
+        <real_time_factor>1</real_time_factor>
+        <iterations>1</iterations>
+      </plugin>
+      <plugin name="Entity tree" filename="EntityTree" />
+    </gui>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type="adiabatic" />
+    <scene>
+      <grid>false</grid>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <model name='grass_plane'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ubuntu22/Downloads/gazebo-vegetation-master/gazebo_vegetation/models/grass_plane/meshes/grass_plane.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ubuntu22/Downloads/gazebo-vegetation-master/gazebo_vegetation/models/grass_plane/meshes/grass_plane.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-0.65707238530505663 -4.9175167083740234 4.7394039599524262e-06 0 0 0</pose>
+      <static>true</static>
+      <self_collide>false</self_collide>
+    </model>
+
+
+    <light name="sunUTC" type="directional">
+      <pose>0 0 500 0 -0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>0.001 0.625 -0.78</direction>
+      <diffuse>0.904 0.904 0.904 1</diffuse>
+      <specular>0.271 0.271 0.271 1</specular>
+      <attenuation>
+        <range>2000</range>
+        <linear>0</linear>
+        <constant>1</constant>
+        <quadratic>0</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+
+<!-- Objects to be mentioned -->
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_2</uri>
+      <name>tree 21</name>
+      <pose>-51.2512216537247 9.86583149715473 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_2</uri>
+      <name>tree 22</name>
+      <pose>6.789429702008675 -26.3320424388264 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_2</uri>
+      <name>tree 23</name>
+      <pose>29.87585238229468 59.41738937476424 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_2</uri>
+      <name>tree 24</name>
+      <pose>49.08552499985517 64.7804787380635 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_2</uri>
+      <name>tree 25</name>
+      <pose>-50.33312196586982 -3.136137245402992 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_2</uri>
+      <name>tree 26</name>
+      <pose>17.013613021837315 59.136090411640566 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_2</uri>
+      <name>tree 27</name>
+      <pose>74.60844118246686 -8.87788480672262 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_2</uri>
+      <name>tree 28</name>
+      <pose>-41.82982621507952 -54.14272826381607 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_2</uri>
+      <name>tree 29</name>
+      <pose>1.334026862113035 -12.978440972195017 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_2</uri>
+      <name>tree 210</name>
+      <pose>-45.98231039211547 56.794712541663074 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_2</uri>
+      <name>tree 211</name>
+      <pose>65.14067792064608 -70.3485496877556 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_2</uri>
+      <name>tree 212</name>
+      <pose>-37.48976104751805 -23.2557655646182 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_2</uri>
+      <name>tree 213</name>
+      <pose>63.11594245686973 15.010482474209113 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_2</uri>
+      <name>tree 214</name>
+      <pose>2.309367547180173 -74.19315793070821 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_2</uri>
+      <name>tree 215</name>
+      <pose>-42.50266681909304 -3.0544498067261827 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 31</name>
+      <pose>60.29896348332127 27.15094989532905 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 32</name>
+      <pose>53.56934602166453 -9.93770064655044 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 33</name>
+      <pose>-17.09790721487723 11.822022946897476 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 34</name>
+      <pose>-64.45973602685959 -38.58111674631882 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 35</name>
+      <pose>36.398124532059654 25.443854061847773 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 36</name>
+      <pose>-15.167398970953897 -71.80723880002843 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 37</name>
+      <pose>69.88437676272017 -16.13070504350783 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 38</name>
+      <pose>6.272865851242173 -34.92328488956143 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 39</name>
+      <pose>33.46312412076331 -17.1019435191005 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 310</name>
+      <pose>9.043579346687125 20.793016361827227 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 311</name>
+      <pose>-15.106536525818349 -50.015825384810036 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 312</name>
+      <pose>-0.955170560883289 73.79999983648352 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 313</name>
+      <pose>-11.383671908885447 -14.140324765462097 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 314</name>
+      <pose>26.220007576458727 15.97299231784055 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 315</name>
+      <pose>-29.509356117377628 16.813075087118705 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 316</name>
+      <pose>45.80717320159779 5.909514321406633 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 317</name>
+      <pose>37.584324883445746 -6.75218681160041 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 318</name>
+      <pose>10.660024737815391 45.52980560451739 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 319</name>
+      <pose>-64.15931772749796 -47.694125498745535 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 320</name>
+      <pose>-57.83305358159329 -59.16728554639594 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_3</uri>
+      <name>tree 321</name>
+      <pose>-36.378307907651134 4.336974212989674 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 11</name>
+      <pose>-31.15271568865682 -54.50853671606862 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 12</name>
+      <pose>-65.70351697875309 -2.5641243188987914 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 13</name>
+      <pose>44.29357426729358 0.4884598810864844 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 14</name>
+      <pose>53.76066998224863 8.899178457066952 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 15</name>
+      <pose>62.48258289905547 39.62552304091646 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 16</name>
+      <pose>24.98487871256424 -26.896828988142943 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 17</name>
+      <pose>-59.75575095229368 22.084648682671656 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 18</name>
+      <pose>-6.339542197454222 -63.917177881711744 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 19</name>
+      <pose>13.36679066216739 74.14396528738087 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 110</name>
+      <pose>24.840001352255882 -68.8151197162268 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 111</name>
+      <pose>-70.67528142944991 47.815246596371225 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 112</name>
+      <pose>-64.31639899456901 -8.984952878201653 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 113</name>
+      <pose>56.36686374283761 -54.67583350668062 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 114</name>
+      <pose>-10.939967979888905 72.982226540966 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 115</name>
+      <pose>-3.9899808164972796 38.78638062150253 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 116</name>
+      <pose>32.577980188315735 67.26683564486419 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 117</name>
+      <pose>13.729241936319426 -70.35377261952168 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 118</name>
+      <pose>66.16848345367421 25.448925712649398 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 119</name>
+      <pose>-3.8751949368300984 -54.0100427793854 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 120</name>
+      <pose>50.01952871388883 -59.27000748382328 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_1</uri>
+      <name>tree 121</name>
+      <pose>-74.58218551103074 -27.208503739987847 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 51</name>
+      <pose>74.76477823241231 -14.750438218231693 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 52</name>
+      <pose>27.578973468036722 -33.335795364775215 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 53</name>
+      <pose>-10.843626327797466 -19.364303915812393 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 54</name>
+      <pose>-21.727490050228113 -0.5487643606842738 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 55</name>
+      <pose>46.327597895730335 -33.28973815479163 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 56</name>
+      <pose>-31.10043861614976 27.396289242755984 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 57</name>
+      <pose>41.72827215741022 58.92641381478202 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 58</name>
+      <pose>60.3925312534291 58.73784152958527 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 59</name>
+      <pose>39.75547709084681 -40.744190120922575 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 510</name>
+      <pose>-68.44803753969816 8.500975621685939 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 511</name>
+      <pose>20.79953640951892 -6.4504503349999 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 512</name>
+      <pose>5.6076296138159165 64.21634893300842 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 513</name>
+      <pose>59.108024163987835 -29.60435354547363 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 514</name>
+      <pose>20.00022998620142 54.82749409300959 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 515</name>
+      <pose>13.289164885345954 29.93236033095077 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 516</name>
+      <pose>-73.16034249952696 13.517077902578407 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 517</name>
+      <pose>-34.69883794051016 73.74408455664201 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 518</name>
+      <pose>-2.9947145085591984 -31.17767845766066 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 519</name>
+      <pose>73.12144598247093 -43.31293458431912 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 520</name>
+      <pose>-70.4280564824384 20.86565415759752 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_5</uri>
+      <name>tree 521</name>
+      <pose>62.56753473850421 -43.13020867174782 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_4</uri>
+      <name>tree 41</name>
+      <pose>35.76866838228483 43.391187591554925 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_4</uri>
+      <name>tree 42</name>
+      <pose>-25.92715536875737 43.77170570848703 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_4</uri>
+      <name>tree 43</name>
+      <pose>24.550248746445064 59.7258012898277 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_4</uri>
+      <name>tree 44</name>
+      <pose>-49.46089477084918 -53.59270117546585 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_4</uri>
+      <name>tree 45</name>
+      <pose>-23.46468620184585 -52.54416548781967 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_4</uri>
+      <name>tree 46</name>
+      <pose>57.99358356814463 74.44976557122726 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_4</uri>
+      <name>tree 47</name>
+      <pose>-25.274553143927868 -74.27854510694442 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_4</uri>
+      <name>tree 48</name>
+      <pose>72.89473901691306 -68.02637342540592 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_4</uri>
+      <name>tree 49</name>
+      <pose>21.041880551297467 -2.023771692334307 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_4</uri>
+      <name>tree 410</name>
+      <pose>35.264493528450785 33.954530599344835 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_4</uri>
+      <name>tree 411</name>
+      <pose>28.949403218639517 72.49696895769407 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_4</uri>
+      <name>tree 412</name>
+      <pose>-57.86962594951824 15.916884083756699 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_8</uri>
+      <name>tree 81</name>
+      <pose>-66.19891750474379 54.050640846979405 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_8</uri>
+      <name>tree 82</name>
+      <pose>-48.648244791097035 -63.67554494599473 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_8</uri>
+      <name>tree 83</name>
+      <pose>27.0232683043601 1.6790863841211205 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_8</uri>
+      <name>tree 84</name>
+      <pose>-48.352263768167106 33.75379009794669 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_8</uri>
+      <name>tree 85</name>
+      <pose>51.34386390388485 26.75540548400174 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_8</uri>
+      <name>tree 86</name>
+      <pose>-5.192842002878351 66.63045830735402 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_8</uri>
+      <name>tree 87</name>
+      <pose>-59.369772810415796 -1.8890001234276212 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_8</uri>
+      <name>tree 88</name>
+      <pose>48.45545227098735 -74.50344982682059 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_8</uri>
+      <name>tree 89</name>
+      <pose>-32.24750038773469 -16.847997176770548 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_8</uri>
+      <name>tree 810</name>
+      <pose>-14.548547134373656 -5.509228660089178 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_8</uri>
+      <name>tree 811</name>
+      <pose>8.216486080671501 32.71528296697497 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_8</uri>
+      <name>tree 812</name>
+      <pose>-46.22750162681677 -68.80897538187847 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 71</name>
+      <pose>-26.867218553560853 4.290371282480066 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 72</name>
+      <pose>38.747850684789 32.25230738001598 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 73</name>
+      <pose>-71.66785168682038 3.0991174358468356 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 74</name>
+      <pose>50.427156302589765 16.125354767526943 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 75</name>
+      <pose>-57.04603703849757 -74.6374466632735 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 76</name>
+      <pose>-3.4352454702247712 34.528060954102344 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 77</name>
+      <pose>59.07332800888014 -40.61792811224842 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 78</name>
+      <pose>-44.24517138082938 -38.51158860407812 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 79</name>
+      <pose>-21.832622701787777 -11.639901913038578 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 710</name>
+      <pose>-53.88942061584949 69.19372818340184 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 711</name>
+      <pose>-74.15321293868753 31.824245807228337 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 712</name>
+      <pose>69.15874755853824 -58.94768240816989 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 713</name>
+      <pose>33.44810106864324 -4.208806683123157 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 714</name>
+      <pose>17.274605850080874 2.0429653647142203 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 715</name>
+      <pose>-58.26617003253442 35.51999421671958 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 716</name>
+      <pose>22.20608899048294 16.689055347169187 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 717</name>
+      <pose>66.28220661090802 66.23482345517627 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 718</name>
+      <pose>-57.16717743091981 68.27256015925374 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 719</name>
+      <pose>-25.249323900675627 18.22999369370352 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 720</name>
+      <pose>25.773857052018528 5.248323293315522 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 721</name>
+      <pose>28.11563116537981 -12.636370823020506 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 722</name>
+      <pose>55.479369873961275 51.75149182429564 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 723</name>
+      <pose>-33.324223636250736 -41.860608630908544 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 724</name>
+      <pose>33.8678663396918 31.075669202068752 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 725</name>
+      <pose>-72.69331983529852 63.18012831545974 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 726</name>
+      <pose>55.51594989849275 37.85203833948722 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 727</name>
+      <pose>-20.211101933546885 45.393733309322414 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 728</name>
+      <pose>42.56774384923082 73.88818690213387 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 729</name>
+      <pose>36.73448949545198 10.390070445473043 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_7</uri>
+      <name>tree 730</name>
+      <pose>-39.181259334103615 52.178850057425535 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 91</name>
+      <pose>64.68146256008575 -63.23747128731663 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 92</name>
+      <pose>31.63078135219719 47.788387469488015 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 93</name>
+      <pose>-31.723639049992833 -61.038678458862535 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 94</name>
+      <pose>-18.04525974828411 56.64655565076541 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 95</name>
+      <pose>-50.825933959533174 -37.155056787495425 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 96</name>
+      <pose>-17.07938407242063 54.79733476893563 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 97</name>
+      <pose>-22.563953397263653 60.02717394805882 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 98</name>
+      <pose>-36.53826295537893 15.289164852995114 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 99</name>
+      <pose>71.35769524995928 51.688449314629054 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 910</name>
+      <pose>20.32938311703812 -31.151850664408805 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 911</name>
+      <pose>-68.89292390632146 -65.12689906938846 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 912</name>
+      <pose>-28.40945547735548 26.572039214739988 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 913</name>
+      <pose>42.63140458839763 49.219789210123736 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 914</name>
+      <pose>8.720521152125471 -55.34504655348087 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 915</name>
+      <pose>-0.41175358291530983 22.513613281775704 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 916</name>
+      <pose>30.225213374654686 44.47550959082098 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 917</name>
+      <pose>0.9864871857361237 43.74036503839099 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 918</name>
+      <pose>-39.98533276258824 17.55586297144015 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 919</name>
+      <pose>22.650384788775312 20.81647348093074 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 920</name>
+      <pose>42.10312496637877 5.974141774679026 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 921</name>
+      <pose>30.104360020657623 66.36443680763949 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 922</name>
+      <pose>50.112354746848965 0.39212023698593157 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 923</name>
+      <pose>4.284605043136594 21.98450116334402 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 924</name>
+      <pose>54.248007780272246 -45.20201712593614 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 925</name>
+      <pose>-13.700722173926017 5.447900005746504 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 926</name>
+      <pose>-61.09250575283899 -63.86531337956461 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 927</name>
+      <pose>54.68023134636036 -32.202393437929835 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 928</name>
+      <pose>44.386163945233506 -29.788257120986586 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 929</name>
+      <pose>-6.854592003261388 53.58642681792412 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 930</name>
+      <pose>70.02690395307638 0.7742818029895204 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 931</name>
+      <pose>44.703426000982745 58.91892239869787 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 932</name>
+      <pose>6.283943723342816 -50.00450905570655 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 933</name>
+      <pose>-46.17854548010816 -0.5237624763098125 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 934</name>
+      <pose>22.39388087023505 57.18156589700382 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 935</name>
+      <pose>40.65737525263049 24.43998860260122 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 936</name>
+      <pose>-34.80642719128782 54.662032806415084 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 937</name>
+      <pose>-29.79867597348857 -8.255611499242676 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 938</name>
+      <pose>47.38071478153847 44.83953639574054 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 939</name>
+      <pose>61.290605334481995 43.302518430270126 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 940</name>
+      <pose>-14.734436266545977 42.66414622310184 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 941</name>
+      <pose>57.39436627445329 56.312149028875524 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 942</name>
+      <pose>-29.854686586147785 49.49726504484822 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 943</name>
+      <pose>44.92792361603095 -49.71856778695508 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 944</name>
+      <pose>74.91565550689992 40.484977911270974 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_9</uri>
+      <name>tree 945</name>
+      <pose>50.82395242708249 -18.24952384190542 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 61</name>
+      <pose>50.043530399993685 -26.190427283429337 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 62</name>
+      <pose>-21.050296873661452 -7.305438313010427 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 63</name>
+      <pose>29.39983290160501 -22.307259932703182 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 64</name>
+      <pose>-10.860517942692624 45.9589616994019 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 65</name>
+      <pose>-55.17313421801879 -32.24932807030266 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 66</name>
+      <pose>16.198680372102828 -5.396914310577543 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 67</name>
+      <pose>-45.06809709704101 65.07358994394906 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 68</name>
+      <pose>51.37759110750643 44.39051808969798 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 69</name>
+      <pose>33.59729028737951 7.869947308429005 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 610</name>
+      <pose>13.767368648097175 26.97378957583733 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 611</name>
+      <pose>-7.628465137678447 1.955435697551735 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 612</name>
+      <pose>-5.759372397772992 -69.35729113953465 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 613</name>
+      <pose>9.410598531986537 38.35268836573843 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 614</name>
+      <pose>-42.417851855543276 -28.789922404526912 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 615</name>
+      <pose>59.61142386986097 -69.13989880103536 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 616</name>
+      <pose>54.6645500819817 41.17343195035423 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 617</name>
+      <pose>-19.16008452701091 53.26161532547175 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 618</name>
+      <pose>72.49356874940378 -26.954753928578292 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 619</name>
+      <pose>-36.03946752567994 12.879945382569076 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 620</name>
+      <pose>-48.74913852218756 -36.63350764777098 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 621</name>
+      <pose>10.55883415724034 12.088752250382043 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 622</name>
+      <pose>-70.20801866854305 60.670420336798145 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 623</name>
+      <pose>56.45605895728434 -61.19049205288478 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 624</name>
+      <pose>-16.29492768224307 28.516732323599115 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 625</name>
+      <pose>52.56408046624664 22.691278064108474 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 626</name>
+      <pose>39.34153068884757 62.79438138635288 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 627</name>
+      <pose>25.690074078877927 56.02238952604037 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 628</name>
+      <pose>-34.19162551206597 16.286642576737975 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 629</name>
+      <pose>-67.03671667656513 20.175784394114785 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 630</name>
+      <pose>50.4018202417129 17.334326793048945 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 631</name>
+      <pose>50.19924036495799 -28.343955174551446 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 632</name>
+      <pose>52.08989272197367 -52.55518584035303 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 633</name>
+      <pose>63.131661137931445 -18.104838824616735 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 634</name>
+      <pose>70.74800201854848 -3.8202839276964653 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 635</name>
+      <pose>-32.092034197114 73.41936803537888 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 636</name>
+      <pose>-55.7375212568095 14.553167499064116 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 637</name>
+      <pose>70.09008013499113 -34.38669026402674 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 638</name>
+      <pose>51.63412053749451 34.82171198135953 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 639</name>
+      <pose>-12.925711753776291 -60.093915530174634 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 640</name>
+      <pose>72.91253480435455 70.5290446242222 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 641</name>
+      <pose>-6.37385311308266 31.36843147714633 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 642</name>
+      <pose>-41.39190691824568 -72.64357707482667 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 643</name>
+      <pose>73.44387435594027 -39.02257864484477 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 644</name>
+      <pose>26.48824354594923 -45.19624077530618 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/tree_6</uri>
+      <name>tree 645</name>
+      <pose>3.6900239950755207 -67.27407668553214 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 01</name>
+      <pose>-0.1976333123067775 38.03333466332988 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 02</name>
+      <pose>16.083754449260653 46.7228812781742 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 03</name>
+      <pose>-44.50822380011917 -49.757648235594864 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 04</name>
+      <pose>6.032582335613512 34.5522473023245 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 05</name>
+      <pose>53.60296091693661 -48.77669170670208 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 06</name>
+      <pose>38.856115916195165 -28.805822244912967 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 07</name>
+      <pose>-66.87118720330956 12.110996445752463 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 08</name>
+      <pose>-4.581207627506103 51.30946920701906 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 09</name>
+      <pose>4.051655452793938 39.12183151939314 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 010</name>
+      <pose>-68.27231327004911 44.88581034803812 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 011</name>
+      <pose>-14.817231944336037 29.930732875413156 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 012</name>
+      <pose>29.35192679897817 -70.90694586522697 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 013</name>
+      <pose>63.78917236978401 -20.738363769296953 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 014</name>
+      <pose>-5.166569240252301 -1.0932148414409681 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 015</name>
+      <pose>10.469021638497281 63.66207336633212 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 016</name>
+      <pose>6.649135476539243 14.784572551882121 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 017</name>
+      <pose>9.443129152144436 -74.05752987018758 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 018</name>
+      <pose>-38.70628739939071 -57.30608804223256 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 019</name>
+      <pose>26.36025348763441 51.41176996327985 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 020</name>
+      <pose>17.537421932498233 -74.26993151141203 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 021</name>
+      <pose>-0.8000581986334936 -53.04918357220259 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 022</name>
+      <pose>54.10803173535584 45.70029635305558 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 023</name>
+      <pose>26.611105592304924 56.79774397692623 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 024</name>
+      <pose>-7.840100574237027 56.46246613875758 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 025</name>
+      <pose>20.951942002367446 3.8270505641665977 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 026</name>
+      <pose>11.05469443770616 -21.84440760859944 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 027</name>
+      <pose>-11.812112498382504 -28.610877234228106 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 028</name>
+      <pose>-66.18327914793026 -74.6702847865729 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 029</name>
+      <pose>-31.204774383686143 72.56161762933655 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_0</uri>
+      <name>bush 030</name>
+      <pose>-56.18458194142095 45.26310960347145 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 11</name>
+      <pose>-68.0325963492939 -54.416637491182435 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 12</name>
+      <pose>31.392584025914587 -21.710303902103625 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 13</name>
+      <pose>70.31778716434027 -53.39875002553618 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 14</name>
+      <pose>39.42913887614115 21.86469052256446 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 15</name>
+      <pose>-63.44456736199653 43.41128425787949 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 16</name>
+      <pose>45.332451983719835 -59.77583917318388 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 17</name>
+      <pose>-69.17907920280479 -48.13937105691181 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 18</name>
+      <pose>-66.80713025119745 2.1431645889644244 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 19</name>
+      <pose>-57.800830303726215 -24.765595375724175 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 110</name>
+      <pose>15.540149991146691 -45.76489760447208 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 111</name>
+      <pose>-60.3411442025149 -26.00193154342294 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 112</name>
+      <pose>44.05417732480905 56.238970453040906 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 113</name>
+      <pose>-18.43223844791786 -33.103227746346306 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 114</name>
+      <pose>-69.45677186323302 32.280705474111556 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 115</name>
+      <pose>-20.970096566936682 -47.478435668241985 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 116</name>
+      <pose>7.203498723431764 -8.997180246828037 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 117</name>
+      <pose>73.57286697223574 23.936025421451347 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 118</name>
+      <pose>-37.20150228851908 -39.42390169211328 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 119</name>
+      <pose>4.128846861198525 31.28693824734721 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 120</name>
+      <pose>-8.751508911240094 4.521863516537493 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 121</name>
+      <pose>-17.626722945164815 -6.705816964390266 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 122</name>
+      <pose>-68.75288557005621 -43.901451335254805 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 123</name>
+      <pose>12.963870289604472 -12.97985691049103 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 124</name>
+      <pose>66.47075076405488 19.046152377207505 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 125</name>
+      <pose>69.78923009306885 -44.08069346541007 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 126</name>
+      <pose>-8.5934594981794 -69.89231980453964 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 127</name>
+      <pose>-30.283185850465216 -70.31094187640716 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 128</name>
+      <pose>18.492757460175213 22.39132399327785 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 129</name>
+      <pose>-56.14905980851994 61.15207189211685 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_1</uri>
+      <name>bush 130</name>
+      <pose>25.539691291802114 -29.858450536400767 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 21</name>
+      <pose>53.32547590340775 49.3229502613662 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 22</name>
+      <pose>41.57663906688177 32.8343741382204 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 23</name>
+      <pose>-41.766836548403155 -8.430769966222229 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 24</name>
+      <pose>33.41855014771872 -72.19143309480135 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 25</name>
+      <pose>-33.10154434832043 -74.56941486055045 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 26</name>
+      <pose>-48.23165489642416 -55.9116424704346 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 27</name>
+      <pose>-51.462052853162675 51.263392330659045 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 28</name>
+      <pose>-48.655393452462064 36.64360224826545 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 29</name>
+      <pose>24.42788846963313 22.609994624673575 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 210</name>
+      <pose>-11.579371184284462 46.9652786167986 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 211</name>
+      <pose>13.883643057950025 -34.926347634793856 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 212</name>
+      <pose>34.33086779767655 14.72311010138354 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 213</name>
+      <pose>-1.0308048359049025 -55.55904602278932 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 214</name>
+      <pose>-14.739620868649062 69.58827311584761 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 215</name>
+      <pose>-66.95606384740347 59.01034320091543 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 216</name>
+      <pose>-52.25875034379409 -54.32705948467368 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 217</name>
+      <pose>-47.635201537262496 35.70116105608939 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 218</name>
+      <pose>-4.1241298154514965 53.712418577823314 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 219</name>
+      <pose>67.18672093804139 39.764216064970654 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 220</name>
+      <pose>-38.476510992080584 20.197159889232054 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 221</name>
+      <pose>47.34652595072393 37.19217726566259 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 222</name>
+      <pose>1.6950205029152272 48.734388834634515 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 223</name>
+      <pose>-3.6127366926318984 -26.333438870820835 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 224</name>
+      <pose>62.51700109438471 7.95084383193317 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 225</name>
+      <pose>-30.965878461366188 -34.041627876427555 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 226</name>
+      <pose>-22.204705936705302 22.692423403080852 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 227</name>
+      <pose>33.73452210294059 -70.06236139932072 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 228</name>
+      <pose>-5.378243465239478 -29.636073723399676 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 229</name>
+      <pose>-53.939528861391025 -23.19704559839768 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_2</uri>
+      <name>bush 230</name>
+      <pose>58.355768098602965 54.27353354868566 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 31</name>
+      <pose>70.0739090367097 50.28052786868662 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 32</name>
+      <pose>-74.98989017165678 65.0881797622794 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 33</name>
+      <pose>-19.628657494491243 -20.1208362265794 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 34</name>
+      <pose>44.35343713917739 46.20431223586526 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 35</name>
+      <pose>74.36552938562474 -54.98180285042524 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 36</name>
+      <pose>-74.61343630181078 -59.36821353927432 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 37</name>
+      <pose>13.545521801876603 65.99368552345513 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 38</name>
+      <pose>27.792621252528733 50.21144254600485 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 39</name>
+      <pose>-63.92373156589474 25.228855294761672 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 310</name>
+      <pose>-57.05453731743931 52.47200924961798 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 311</name>
+      <pose>-41.925774281567804 15.696656515905985 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 312</name>
+      <pose>-69.84725380654478 -44.49697339052315 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 313</name>
+      <pose>-30.258595233339932 -28.31463663624116 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 314</name>
+      <pose>39.812119384311316 -70.85995010450281 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 315</name>
+      <pose>17.01118410560386 -56.24190220367198 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 316</name>
+      <pose>22.18763678370273 40.420908081453376 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 317</name>
+      <pose>2.7917273422129796 59.831269178960326 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 318</name>
+      <pose>31.426046098748657 -44.46062815836591 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 319</name>
+      <pose>-45.800129593154224 -12.861529398664231 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 320</name>
+      <pose>-56.11972724151062 -63.72565242944256 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 321</name>
+      <pose>-3.747490394961602 -37.171263237986985 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 322</name>
+      <pose>57.75352588235492 -35.009729650412474 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 323</name>
+      <pose>22.811765017554265 -58.33615059252948 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 324</name>
+      <pose>-49.859227128875254 -69.99801577609865 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 325</name>
+      <pose>63.39653744537719 -57.84317944926376 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 326</name>
+      <pose>54.00917937864622 63.89547053813797 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 327</name>
+      <pose>9.0873426317346 8.085981403238364 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 328</name>
+      <pose>-14.932280369166449 -25.34395147717251 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 329</name>
+      <pose>-60.962419444377026 32.44376046883103 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_3</uri>
+      <name>bush 330</name>
+      <pose>66.1707450235491 36.65615830062774 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 41</name>
+      <pose>53.45471244454515 42.41383422195574 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 42</name>
+      <pose>62.115884949867734 21.915647179907452 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 43</name>
+      <pose>37.4331569429428 74.44849613578535 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 44</name>
+      <pose>-50.09561738855865 43.289890708191095 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 45</name>
+      <pose>-9.435531016661841 38.27136143425422 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 46</name>
+      <pose>-9.669755577272682 11.735493119868309 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 47</name>
+      <pose>-2.2054119747704988 -62.86614869598815 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 48</name>
+      <pose>-40.20078100270341 55.0594162671307 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 49</name>
+      <pose>67.05239070702802 -74.16906215505749 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 410</name>
+      <pose>47.06424304965837 69.30291799315532 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 411</name>
+      <pose>29.657792021019063 -30.56289914829067 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 412</name>
+      <pose>51.695771089735345 -51.431709447076 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 413</name>
+      <pose>61.085955501435734 -1.2783095202809562 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 414</name>
+      <pose>55.44334776621679 65.14902035569088 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 415</name>
+      <pose>-6.315657733725658 -19.77265961188661 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 416</name>
+      <pose>-18.604354028244614 -65.08956336817121 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 417</name>
+      <pose>34.87281997131045 -67.15730933583086 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 418</name>
+      <pose>-3.913226313727691 9.384976930507577 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 419</name>
+      <pose>-62.49963075364149 -72.59118677530324 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 420</name>
+      <pose>23.94658412198757 19.15034167292896 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 421</name>
+      <pose>51.04656877443996 45.21412622877301 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 422</name>
+      <pose>-38.22861986306062 -36.17516437966354 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 423</name>
+      <pose>-53.0524533091538 53.36985556687134 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 424</name>
+      <pose>-49.0681452069173 -32.26714348149834 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 425</name>
+      <pose>-12.601639206552107 -5.447346385384392 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 426</name>
+      <pose>13.751754304355401 -1.6513163917310294 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 427</name>
+      <pose>41.78467654593882 20.515423250261506 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 428</name>
+      <pose>39.40230551654487 48.95605443708325 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 429</name>
+      <pose>-66.82591129808979 40.96409648710224 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_4</uri>
+      <name>bush 430</name>
+      <pose>-7.680717043583556 12.95625029147888 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 51</name>
+      <pose>-28.10568822234348 -29.622138061423207 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 52</name>
+      <pose>-58.04604277596308 41.07355533213226 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 53</name>
+      <pose>52.09674969270144 55.60277338978847 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 54</name>
+      <pose>30.708986828728257 -20.716521010015157 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 55</name>
+      <pose>34.47991145381094 73.6506106158933 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 56</name>
+      <pose>-25.10967049949545 -25.366609732153762 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 57</name>
+      <pose>5.586308585286233 -1.2915306129439301 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 58</name>
+      <pose>32.081786878369286 -25.295829004196705 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 59</name>
+      <pose>-50.392740920747784 46.56635051502519 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 510</name>
+      <pose>51.53563508371599 48.29319817331397 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 511</name>
+      <pose>64.4515773437189 -2.8492865432793195 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 512</name>
+      <pose>-64.0409760198092 -57.73236694665386 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 513</name>
+      <pose>-13.040602859234781 58.37918858451468 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 514</name>
+      <pose>58.82451098936306 -16.222685936140614 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 515</name>
+      <pose>-4.607807680298691 -25.906915371733128 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 516</name>
+      <pose>-5.7328257072152695 -36.07943326396693 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 517</name>
+      <pose>-9.588894827819175 -17.60723768046352 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 518</name>
+      <pose>20.149704168395303 61.94320849893748 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 519</name>
+      <pose>46.80897856638805 -30.413027441822635 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 520</name>
+      <pose>40.513058485577915 -38.72219589135478 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 521</name>
+      <pose>-14.407372336291672 -9.380897904634509 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 522</name>
+      <pose>-25.149163415876686 14.82420174193335 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 523</name>
+      <pose>51.2986505931476 20.83936960176669 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 524</name>
+      <pose>12.440982457305495 55.040286863353515 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 525</name>
+      <pose>28.59350548696854 8.0218929429751 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 526</name>
+      <pose>9.344784172075933 34.847506284086364 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 527</name>
+      <pose>52.17344933516351 -28.493473118121045 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 528</name>
+      <pose>59.95876726840336 5.77789614707352 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 529</name>
+      <pose>-13.176625265163082 35.4782100230499 0 1.5708000000000006 0 0</pose>
+    </include>
+
+    <include>
+      <uri>file:///home/ubuntu22/PX4-Autopilot/Tools/simulation/gz/worlds/bush_5</uri>
+      <name>bush 530</name>
+      <pose>-34.45085840088915 -17.717070781012296 0 1.5708000000000006 0 0</pose>
+    </include>
+
+  </world>
+</sdf>
