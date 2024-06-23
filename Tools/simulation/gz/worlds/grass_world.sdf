@@ -120,15 +120,2095 @@
       <static>true</static>
       <self_collide>false</self_collide>
     </model>
-
-
-    <light name="sunUTC" type="directional">
-      <pose>0 0 500 0 -0 0</pose>
+    <model name='tree 21'>
+      <static>true</static>
+      <pose>-3.4452750329200232 -4.8668932027866632 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 22'>
+      <static>true</static>
+      <pose>-4.7876818550434761 3.3328145098276423 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 23'>
+      <static>true</static>
+      <pose>3.717753907985383 -3.0302886209904734 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 24'>
+      <static>true</static>
+      <pose>3.1309127186219463 4.8331460666186778 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91'>
+      <static>true</static>
+      <pose>-2.5665635000831974 -0.33684982558216969 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 61'>
+      <static>true</static>
+      <pose>-3.4411163138147627 -0.76799405299057 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 62'>
+      <static>true</static>
+      <pose>-0.90365776828902789 3.9739579308093589 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 63'>
+      <static>true</static>
+      <pose>-4.4991718208869438 -0.48571261702857438 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 64'>
+      <static>true</static>
+      <pose>-1.1229784214524918 4.872349157730854 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 65'>
+      <static>true</static>
+      <pose>-0.92903593347456948 2.8447328988769671 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 66'>
+      <static>true</static>
+      <pose>4.4593959698570647 1.1354548269799594 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 67'>
+      <static>true</static>
+      <pose>-0.12220519960942777 -3.001875785013417 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 68'>
+      <static>true</static>
+      <pose>-4.5229796315293349 -0.9409455240706901 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 69'>
+      <static>true</static>
+      <pose>3.7161968799121432 0.93261755960006187 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 610'>
+      <static>true</static>
+      <pose>4.9328950504999654 1.1019229022681802 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 611'>
+      <static>true</static>
+      <pose>3.1297835857473952 0.7866830990278606 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 612'>
+      <static>true</static>
+      <pose>-0.68479280156286748 2.4992876276244234 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 613'>
+      <static>true</static>
+      <pose>-4.8380892857652915 -0.7408190672157664 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 614'>
+      <static>true</static>
+      <pose>4.0332751700253855 0.91237699326634569 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 615'>
+      <static>true</static>
+      <pose>-2.2345031640450452 -1.1580654027335502 0 1.5708000000000011 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6/model://tree_6/meshes/tree.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='x500_depth_0'>
+      <frame name='_merged__x500__model__' attached_to='base_link'>
+        <pose relative_to='__model__'>0 0 0.23999999999999999 0 0 0</pose>
+      </frame>
+      <link name='base_link'>
+        <inertial>
+          <mass>2</mass>
+          <inertia>
+            <ixx>0.021666666666666671</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.021666666666666671</iyy>
+            <iyz>0</iyz>
+            <izz>0.040000000000000008</izz>
+          </inertia>
+          <pose>0 0 0 0 0 0</pose>
+        </inertial>
+        <gravity>true</gravity>
+        <velocity_decay/>
+        <visual name='base_link_visual'>
+          <pose>0 0 0.025000000000000001 0 0 -3.1415926531795866</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/models/x500_depth/model://x500/meshes/NXP-HGD-CF.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='5010_motor_base_0'>
+          <pose>0.17399999999999999 0.17399999999999999 0.032000000000000001 0 0 -0.45000000000000001</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/models/x500_depth/model://x500/meshes/5010Base.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='5010_motor_base_1'>
+          <pose>-0.17399999999999999 0.17399999999999999 0.032000000000000001 0 0 -0.45000000000000001</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/models/x500_depth/model://x500/meshes/5010Base.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='5010_motor_base_2'>
+          <pose>0.17399999999999999 -0.17399999999999999 0.032000000000000001 0 0 -0.45000000000000001</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/models/x500_depth/model://x500/meshes/5010Base.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='5010_motor_base_3'>
+          <pose>-0.17399999999999999 -0.17399999999999999 0.032000000000000001 0 0 -0.45000000000000001</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/models/x500_depth/model://x500/meshes/5010Base.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='NXP_FMUK66_FRONT'>
+          <pose>0.047 0.001 0.042999999999999997 1 1.1102230246251565e-16 1.5699999999999998</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.012999999999999999 0.0070000000000000001</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 1 1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://x500/materials/textures/nxp.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name='NXP_FMUK66_TOP'>
+          <pose>-0.023 0 0.051499999999999997 0 0 -1.5700000000000001</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.012999999999999999 0.0070000000000000001</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 1 1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://x500/materials/textures/nxp.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name='RDDRONE_FMUK66_TOP'>
+          <pose>-0.029999999999999999 0 0.051499999999999997 0 0 -1.5700000000000001</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.032000000000000001 0.0033999999999999998</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 1 1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://x500/materials/textures/rd.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <collision name='base_link_collision_0'>
+          <pose>0 0 0.0070000000000000001 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.35355339059327373 0.35355339059327373 0.050000000000000003</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <min_depth>0.001</min_depth>
+                <max_vel>0</max_vel>
+              </ode>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+        </collision>
+        <collision name='base_link_collision_1'>
+          <pose>0 -0.098000000000000004 -0.123 -0.34999999999999998 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.014999999999999999 0.014999999999999999 0.20999999999999999</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <min_depth>0.001</min_depth>
+                <max_vel>0</max_vel>
+              </ode>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+        </collision>
+        <collision name='base_link_collision_2'>
+          <pose>0 0.098000000000000004 -0.123 0.34999999999999998 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.014999999999999999 0.014999999999999999 0.20999999999999999</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <min_depth>0.001</min_depth>
+                <max_vel>0</max_vel>
+              </ode>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+        </collision>
+        <collision name='base_link_collision_3'>
+          <pose>0 -0.13200000000000001 -0.2195 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.25 0.014999999999999999 0.014999999999999999</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <min_depth>0.001</min_depth>
+                <max_vel>0</max_vel>
+              </ode>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+        </collision>
+        <collision name='base_link_collision_4'>
+          <pose>0 0.13200000000000001 -0.2195 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.25 0.014999999999999999 0.014999999999999999</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <min_depth>0.001</min_depth>
+                <max_vel>0</max_vel>
+              </ode>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+        </collision>
+        <sensor name='air_pressure_sensor' type='air_pressure'>
+          <pose>0 0 0 0 0 0</pose>
+          <topic>__default__</topic>
+          <update_rate>50</update_rate>
+          <enable_metrics>false</enable_metrics>
+          <air_pressure>
+            <reference_altitude>0</reference_altitude>
+            <pressure>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.01</stddev>
+                <bias_mean>0</bias_mean>
+                <bias_stddev>0</bias_stddev>
+                <dynamic_bias_stddev>0</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>0</dynamic_bias_correlation_time>
+                <precision>0</precision>
+              </noise>
+            </pressure>
+          </air_pressure>
+        </sensor>
+        <sensor name='imu_sensor' type='imu'>
+          <pose>0 0 0 0 0 0</pose>
+          <topic>__default__</topic>
+          <update_rate>250</update_rate>
+          <enable_metrics>false</enable_metrics>
+          <imu>
+            <orientation_reference_frame>
+              <localization>CUSTOM</localization>
+              <custom_rpy>0 0 0</custom_rpy>
+              <grav_dir_x>1 0 0</grav_dir_x>
+            </orientation_reference_frame>
+            <angular_velocity>
+              <x>
+                <noise type='none'>
+                  <mean>0</mean>
+                  <stddev>0</stddev>
+                  <bias_mean>0</bias_mean>
+                  <bias_stddev>0</bias_stddev>
+                  <dynamic_bias_stddev>0</dynamic_bias_stddev>
+                  <dynamic_bias_correlation_time>0</dynamic_bias_correlation_time>
+                  <precision>0</precision>
+                </noise>
+              </x>
+              <y>
+                <noise type='none'>
+                  <mean>0</mean>
+                  <stddev>0</stddev>
+                  <bias_mean>0</bias_mean>
+                  <bias_stddev>0</bias_stddev>
+                  <dynamic_bias_stddev>0</dynamic_bias_stddev>
+                  <dynamic_bias_correlation_time>0</dynamic_bias_correlation_time>
+                  <precision>0</precision>
+                </noise>
+              </y>
+              <z>
+                <noise type='none'>
+                  <mean>0</mean>
+                  <stddev>0</stddev>
+                  <bias_mean>0</bias_mean>
+                  <bias_stddev>0</bias_stddev>
+                  <dynamic_bias_stddev>0</dynamic_bias_stddev>
+                  <dynamic_bias_correlation_time>0</dynamic_bias_correlation_time>
+                  <precision>0</precision>
+                </noise>
+              </z>
+            </angular_velocity>
+            <linear_acceleration>
+              <x>
+                <noise type='none'>
+                  <mean>0</mean>
+                  <stddev>0</stddev>
+                  <bias_mean>0</bias_mean>
+                  <bias_stddev>0</bias_stddev>
+                  <dynamic_bias_stddev>0</dynamic_bias_stddev>
+                  <dynamic_bias_correlation_time>0</dynamic_bias_correlation_time>
+                  <precision>0</precision>
+                </noise>
+              </x>
+              <y>
+                <noise type='none'>
+                  <mean>0</mean>
+                  <stddev>0</stddev>
+                  <bias_mean>0</bias_mean>
+                  <bias_stddev>0</bias_stddev>
+                  <dynamic_bias_stddev>0</dynamic_bias_stddev>
+                  <dynamic_bias_correlation_time>0</dynamic_bias_correlation_time>
+                  <precision>0</precision>
+                </noise>
+              </y>
+              <z>
+                <noise type='none'>
+                  <mean>0</mean>
+                  <stddev>0</stddev>
+                  <bias_mean>0</bias_mean>
+                  <bias_stddev>0</bias_stddev>
+                  <dynamic_bias_stddev>0</dynamic_bias_stddev>
+                  <dynamic_bias_correlation_time>0</dynamic_bias_correlation_time>
+                  <precision>0</precision>
+                </noise>
+              </z>
+            </linear_acceleration>
+            <enable_orientation>true</enable_orientation>
+          </imu>
+        </sensor>
+        <pose>0 0 0.23999999999999999 0 0 0</pose>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='rotor_0'>
+        <gravity>true</gravity>
+        <self_collide>false</self_collide>
+        <velocity_decay/>
+        <pose>0.17399999999999999 -0.17399999999999999 0.29999999999999999 8.1643707248223101e-38 4.5188588570101559e-35 1.0847713790327807e-19</pose>
+        <inertial>
+          <mass>0.016076923076923075</mass>
+          <inertia>
+            <ixx>3.8464910483993325e-07</ixx>
+            <iyy>2.6115851691700804e-05</iyy>
+            <izz>2.6498582347140039e-05</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 0 0</pose>
+        </inertial>
+        <visual name='rotor_0_visual'>
+          <pose>-0.021999999999999999 -0.14638461538461536 -0.016 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.84615384615384615 0.84615384615384615 0.84615384615384615</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/models/x500_depth/model://x500/meshes/1345_prop_ccw.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/DarkGrey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='rotor_0_visual_motor_bell'>
+          <pose>0 0 -0.032000000000000001 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/models/x500_depth/model://x500/meshes/5010Bell.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='rotor_0_collision'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.27923076923076923 0.016923076923076923 0.0008461538461538462</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <min_depth>0.001</min_depth>
+                <max_vel>0</max_vel>
+              </ode>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='rotor_0_joint' type='revolute'>
+        <parent>base_link</parent>
+        <child>rotor_0</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+        <pose>0 0 0 0 0 0</pose>
+      </joint>
+      <link name='rotor_1'>
+        <gravity>true</gravity>
+        <self_collide>false</self_collide>
+        <velocity_decay/>
+        <pose>-0.17399999999999999 0.17399999999999999 0.29999999999999999 8.1643707207500524e-38 4.5188588570101559e-35 1.0847713784917138e-19</pose>
+        <inertial>
+          <mass>0.016076923076923075</mass>
+          <inertia>
+            <ixx>3.8464910483993325e-07</ixx>
+            <iyy>2.6115851691700804e-05</iyy>
+            <izz>2.6498582347140039e-05</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 0 0</pose>
+        </inertial>
+        <visual name='rotor_1_visual'>
+          <pose>-0.021999999999999999 -0.14638461538461536 -0.016 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.84615384615384615 0.84615384615384615 0.84615384615384615</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/models/x500_depth/model://x500/meshes/1345_prop_ccw.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/DarkGrey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='rotor_1_visual_motor_top'>
+          <pose>0 0 -0.032000000000000001 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/models/x500_depth/model://x500/meshes/5010Bell.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='rotor_1_collision'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.27923076923076923 0.016923076923076923 0.0008461538461538462</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <min_depth>0.001</min_depth>
+                <max_vel>0</max_vel>
+              </ode>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='rotor_1_joint' type='revolute'>
+        <parent>base_link</parent>
+        <child>rotor_1</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+        <pose>0 0 0 0 0 0</pose>
+      </joint>
+      <link name='rotor_2'>
+        <gravity>true</gravity>
+        <self_collide>false</self_collide>
+        <velocity_decay/>
+        <pose>0.17399999999999999 0.17399999999999999 0.29999999999999999 8.1643707254445632e-38 4.5188588570101559e-35 1.084771379115457e-19</pose>
+        <inertial>
+          <mass>0.016076923076923075</mass>
+          <inertia>
+            <ixx>3.8464910483993325e-07</ixx>
+            <iyy>2.6115851691700804e-05</iyy>
+            <izz>2.6498582347140039e-05</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 0 0</pose>
+        </inertial>
+        <visual name='rotor_2_visual'>
+          <pose>-0.021999999999999999 -0.14638461538461536 -0.016 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.84615384615384615 0.84615384615384615 0.84615384615384615</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/models/x500_depth/model://x500/meshes/1345_prop_cw.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/DarkGrey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='rotor_2_visual_motor_top'>
+          <pose>0 0 -0.032000000000000001 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/models/x500_depth/model://x500/meshes/5010Bell.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='rotor_2_collision'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.27923076923076923 0.016923076923076923 0.0008461538461538462</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <min_depth>0.001</min_depth>
+                <max_vel>0</max_vel>
+              </ode>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='rotor_2_joint' type='revolute'>
+        <parent>base_link</parent>
+        <child>rotor_2</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+        <pose>0 0 0 0 0 0</pose>
+      </joint>
+      <link name='rotor_3'>
+        <gravity>true</gravity>
+        <self_collide>false</self_collide>
+        <velocity_decay/>
+        <pose>-0.17399999999999999 -0.17399999999999999 0.29999999999999999 8.1643707114457909e-38 4.5188588570101559e-35 1.0847713772554902e-19</pose>
+        <inertial>
+          <mass>0.016076923076923075</mass>
+          <inertia>
+            <ixx>3.8464910483993325e-07</ixx>
+            <iyy>2.6115851691700804e-05</iyy>
+            <izz>2.6498582347140039e-05</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 0 0</pose>
+        </inertial>
+        <visual name='rotor_3_visual'>
+          <pose>-0.021999999999999999 -0.14638461538461536 -0.016 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.84615384615384615 0.84615384615384615 0.84615384615384615</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/models/x500_depth/model://x500/meshes/1345_prop_cw.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/DarkGrey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='rotor_3_visual_motor_top'>
+          <pose>0 0 -0.032000000000000001 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/models/x500_depth/model://x500/meshes/5010Bell.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='rotor_3_collision'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.27923076923076923 0.016923076923076923 0.0008461538461538462</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <min_depth>0.001</min_depth>
+                <max_vel>0</max_vel>
+              </ode>
+            </contact>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='rotor_3_joint' type='revolute'>
+        <parent>base_link</parent>
+        <child>rotor_3</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+        <pose>0 0 0 0 0 0</pose>
+      </joint>
+      <plugin name='gz::sim::systems::MulticopterMotorModel' filename='gz-sim-multicopter-motor-model-system'>
+        <jointName>rotor_0_joint</jointName>
+        <linkName>rotor_0</linkName>
+        <turningDirection>ccw</turningDirection>
+        <timeConstantUp>0.0125</timeConstantUp>
+        <timeConstantDown>0.025</timeConstantDown>
+        <maxRotVelocity>1000.0</maxRotVelocity>
+        <motorConstant>8.54858e-06</motorConstant>
+        <momentConstant>0.016</momentConstant>
+        <commandSubTopic>command/motor_speed</commandSubTopic>
+        <motorNumber>0</motorNumber>
+        <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+        <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+        <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+        <motorType>velocity</motorType>
+      </plugin>
+      <plugin name='gz::sim::systems::MulticopterMotorModel' filename='gz-sim-multicopter-motor-model-system'>
+        <jointName>rotor_1_joint</jointName>
+        <linkName>rotor_1</linkName>
+        <turningDirection>ccw</turningDirection>
+        <timeConstantUp>0.0125</timeConstantUp>
+        <timeConstantDown>0.025</timeConstantDown>
+        <maxRotVelocity>1000.0</maxRotVelocity>
+        <motorConstant>8.54858e-06</motorConstant>
+        <momentConstant>0.016</momentConstant>
+        <commandSubTopic>command/motor_speed</commandSubTopic>
+        <motorNumber>1</motorNumber>
+        <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+        <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+        <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+        <motorType>velocity</motorType>
+      </plugin>
+      <plugin name='gz::sim::systems::MulticopterMotorModel' filename='gz-sim-multicopter-motor-model-system'>
+        <jointName>rotor_2_joint</jointName>
+        <linkName>rotor_2</linkName>
+        <turningDirection>cw</turningDirection>
+        <timeConstantUp>0.0125</timeConstantUp>
+        <timeConstantDown>0.025</timeConstantDown>
+        <maxRotVelocity>1000.0</maxRotVelocity>
+        <motorConstant>8.54858e-06</motorConstant>
+        <momentConstant>0.016</momentConstant>
+        <commandSubTopic>command/motor_speed</commandSubTopic>
+        <motorNumber>2</motorNumber>
+        <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+        <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+        <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+        <motorType>velocity</motorType>
+      </plugin>
+      <plugin name='gz::sim::systems::MulticopterMotorModel' filename='gz-sim-multicopter-motor-model-system'>
+        <jointName>rotor_3_joint</jointName>
+        <linkName>rotor_3</linkName>
+        <turningDirection>cw</turningDirection>
+        <timeConstantUp>0.0125</timeConstantUp>
+        <timeConstantDown>0.025</timeConstantDown>
+        <maxRotVelocity>1000.0</maxRotVelocity>
+        <motorConstant>8.54858e-06</motorConstant>
+        <momentConstant>0.016</momentConstant>
+        <commandSubTopic>command/motor_speed</commandSubTopic>
+        <motorNumber>3</motorNumber>
+        <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+        <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+        <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+        <motorType>velocity</motorType>
+      </plugin>
+      <link name='lidar_link'>
+        <pose>9.6296497219361793e-35 -3.8518598887744717e-34 0.25 0 4.5188588570101559e-35 0</pose>
+        <inertial>
+          <pose>0 0 0.035003035000000002 0 0 0</pose>
+          <mass>0.13</mass>
+          <inertia>
+            <ixx>8.0187379454317424e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>8.0187379454317424e-05</iyy>
+            <iyz>0</iyz>
+            <izz>5.4189679110328667e-05</izz>
+          </inertia>
+        </inertial>
+        <sensor name='hokuyo_ust20lx' type='gpu_lidar'>
+          <pose>0 0 0.12504552499999999 0 0 0</pose>
+          <topic>lidar</topic>
+          <update_rate>30</update_rate>
+          <enable_metrics>false</enable_metrics>
+          <lidar>
+            <scan>
+              <horizontal>
+                <samples>1080</samples>
+                <resolution>1</resolution>
+                <min_angle>-2.356195</min_angle>
+                <max_angle>2.356195</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+                <resolution>1</resolution>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.059999999999999998</min>
+              <max>20</max>
+              <resolution>0.001</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+            <visibility_mask>4294967295</visibility_mask>
+          </lidar>
+        </sensor>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='lidar_joint' type='fixed'>
+        <parent>base_link</parent>
+        <child>lidar_link</child>
+        <pose>0 0 0.099999999999999978 0 0 0</pose>
+      </joint>
+      <pose>6.1425237291644157e-19 3.3566588354136893e-18 -0.012995450194748626 3.0533230756068103e-17 -1.5052703053618439e-18 -2.9599611604232797e-18</pose>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_1'>
+      <static>true</static>
+      <pose>3.8726226270137918 5.9426469354104379 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_2'>
+      <static>true</static>
+      <pose>3.576489952995022 -14.218721173910133 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_3'>
+      <static>true</static>
+      <pose>3.0413881398127476 -15.591622144106747 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_4'>
+      <static>true</static>
+      <pose>1.3739752914065289 -11.904166948703246 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_5'>
+      <static>true</static>
+      <pose>-6.9240481301895329 -1.9524519223085317 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_6'>
+      <static>true</static>
+      <pose>-6.9217063854185383 0.54652331982711466 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_7'>
+      <static>true</static>
+      <pose>-0.55719090818805483 7.5041528030836977 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_8'>
+      <static>true</static>
+      <pose>-0.37503861428885088 8.722232501408854 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_9'>
+      <static>true</static>
+      <pose>-7.5582934104094068 8.108470229410127 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_10'>
+      <static>true</static>
+      <pose>-6.4621434954950443 9.012938200343763 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_11'>
+      <static>true</static>
+      <pose>-8.4522881766768734 7.0279851748825672 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_12'>
+      <static>true</static>
+      <pose>8.2408017240286 2.842489011365803 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_13'>
+      <static>true</static>
+      <pose>8.151002379496024 4.9129270053923992 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_14'>
+      <static>true</static>
+      <pose>10.903857907058457 8.8045932584353928 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_15'>
+      <static>true</static>
+      <pose>8.4969038401024051 -2.1832494681480412 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_16'>
+      <static>true</static>
+      <pose>10.115028843111892 0.067656513215034186 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_17'>
+      <static>true</static>
+      <pose>14.195537840524024 4.0542642805115454 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_18'>
+      <static>true</static>
+      <pose>-2.8799043864739904 13.990390503137913 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 91_19'>
+      <static>true</static>
+      <pose>-0.25486403022906501 18.107118968235447 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9/model://tree_9/meshes/tree_9.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 24_1'>
+      <static>true</static>
+      <pose>-7.1860269671051071 11.848882396294112 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 24_2'>
+      <static>true</static>
+      <pose>13.188276759005841 6.2073428125063685 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 24_3'>
+      <static>true</static>
+      <pose>13.335283853878988 9.1681939560564896 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='tree 24_4'>
+      <static>true</static>
+      <pose>4.9363261886854222 12.718980499833371 0 1.5707999672671704 0 0</pose>
+      <link name='link'>
+        <pose>0 0 0 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>5 5 5</scale>
+              <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2/model://tree_2/meshes/tree_2.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <light name='sunUTC' type='directional'>
+      <pose>0 0 500 0 0 0</pose>
       <cast_shadows>true</cast_shadows>
       <intensity>1</intensity>
-      <direction>0.001 0.625 -0.78</direction>
-      <diffuse>0.904 0.904 0.904 1</diffuse>
-      <specular>0.271 0.271 0.271 1</specular>
+      <direction>0.001 0.625 -0.78000000000000003</direction>
+      <diffuse>0.903999984 0.903999984 0.903999984 1</diffuse>
+      <specular>0.270999998 0.270999998 0.270999998 1</specular>
       <attenuation>
         <range>2000</range>
         <linear>0</linear>
@@ -141,127 +2221,5 @@
         <falloff>0</falloff>
       </spot>
     </light>
-
-<!-- Objects to be mentioned -->
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2</uri>
-      <name>tree 21</name>
-      <pose>-3.4452750329200232 -4.866893202786663 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2</uri>
-      <name>tree 22</name>
-      <pose>-4.787681855043476 3.3328145098276423 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2</uri>
-      <name>tree 23</name>
-      <pose>3.717753907985383 -3.0302886209904734 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_2</uri>
-      <name>tree 24</name>
-      <pose>3.1309127186219463 4.833146066618678 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_9</uri>
-      <name>tree 91</name>
-      <pose>-2.5665635000831974 -0.3368498255821697 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6</uri>
-      <name>tree 61</name>
-      <pose>-3.4411163138147627 -0.76799405299057 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6</uri>
-      <name>tree 62</name>
-      <pose>-0.9036577682890279 3.973957930809359 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6</uri>
-      <name>tree 63</name>
-      <pose>-4.499171820886944 -0.4857126170285744 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6</uri>
-      <name>tree 64</name>
-      <pose>-1.1229784214524918 4.872349157730854 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6</uri>
-      <name>tree 65</name>
-      <pose>-0.9290359334745695 2.844732898876967 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6</uri>
-      <name>tree 66</name>
-      <pose>4.459395969857065 1.1354548269799594 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6</uri>
-      <name>tree 67</name>
-      <pose>-0.12220519960942777 -3.001875785013417 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6</uri>
-      <name>tree 68</name>
-      <pose>-4.522979631529335 -0.9409455240706901 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6</uri>
-      <name>tree 69</name>
-      <pose>3.716196879912143 0.9326175596000619 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6</uri>
-      <name>tree 610</name>
-      <pose>4.932895050499965 1.1019229022681802 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6</uri>
-      <name>tree 611</name>
-      <pose>3.1297835857473952 0.7866830990278606 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6</uri>
-      <name>tree 612</name>
-      <pose>-0.6847928015628675 2.4992876276244234 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6</uri>
-      <name>tree 613</name>
-      <pose>-4.8380892857652915 -0.7408190672157664 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6</uri>
-      <name>tree 614</name>
-      <pose>4.0332751700253855 0.9123769932663457 0 1.5708000000000006 0 0</pose>
-    </include>
-
-    <include>
-      <uri>file:///home/ubuntu22/PX4-Autopilot_biosec/Tools/simulation/gz/worlds/tree_6</uri>
-      <name>tree 615</name>
-      <pose>-2.2345031640450452 -1.1580654027335502 0 1.5708000000000006 0 0</pose>
-    </include>
-
   </world>
 </sdf>
